@@ -226,11 +226,11 @@ public class BinarySearchTree<E extends Comparable<E>> {
         if (node != null) {
             postOrder(node.left, sb);
             if (node != root)
-                sb.append(node.toString()).append(":");
+                sb.append(node).append(":");
             postOrder(node.right, sb);
         }
         if (node == root && node != null) {
-            sb.append(node.toString()).append(":");
+            sb.append(node).append(":");
         }
     }
 
