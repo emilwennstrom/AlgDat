@@ -1,8 +1,6 @@
 package Uppg7;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Stack;
 
 public class PuzzleBoard {
@@ -10,27 +8,18 @@ public class PuzzleBoard {
     private static final int numberOfPuzzlePieces = 4;
     private char[][] board;
     private final int size;
-
     PuzzlePiece[] pieces;
-
-    private char[][] solvedBoard;
-
     private final Stack<PuzzlePiece[]> positions;
     private int noOfSolutions;
+    private final ArrayList<char[][]> solvedBoards;
 
-    private ArrayList<char[][]> solvedBoards;
 
-
-    public PuzzleBoard(int row, int column, int size) {
-        this.size = size;
+    public PuzzleBoard(int row, int column) {
+        this.size = 5;
         positions = new Stack<>();
         createStartingBoard(row, column);
         createPieces(0);
         solvedBoards = new ArrayList<>();
-    }
-
-    public PuzzleBoard() {
-        this(0, 2, 5);
     }
 
     public String solveBoard() {
@@ -73,10 +62,6 @@ public class PuzzleBoard {
             if (board[row][i] == 'W') return false;
         }
         return true;
-    }
-
-    public int getSize() {
-        return size;
     }
 
     private void movePiecesRight() {
@@ -181,15 +166,15 @@ public class PuzzleBoard {
             return sb.toString();
         }
         int no = 1;
+        sb.append("Total solutions: ").append(noOfSolutions).append("\n");
         for(char[][] c : solvedBoards) {
-            sb.append("Solution ").append(no++).append(": ").append("\n");
+            sb.append("Solution ").append(no++).append("\n");
             for (int i = 0; i < size; i++) {
                 for (int j = 0; j < size; j++) {
                     sb.append(c[i][j]).append("  ");
                 }
                 sb.append("\n");
             }
-            sb.append("\n");
         }
         return sb.toString();
     }

@@ -4,7 +4,7 @@ public class PuzzleMain {
 
     public static void main(String[] args) {
         PuzzleBoard board;
-        board = new PuzzleBoard(0, 2, 5);
+        board = new PuzzleBoard(0, 2);
         System.out.println(board.solveBoard());
 
 

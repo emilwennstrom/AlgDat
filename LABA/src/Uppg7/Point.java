@@ -2,7 +2,7 @@ package Uppg7;
 
 public class Point {
 
-    private int row;
+    private final int row;
     private int col;
 
 
@@ -19,16 +19,7 @@ public class Point {
         col += i;
     }
 
-
-    public void setRow(int row) {
-        this.row = row;
-    }
-
     public int getCol() {
         return col;
-    }
-
-    public void setCol(int col) {
-        this.col = col;
     }
 }
