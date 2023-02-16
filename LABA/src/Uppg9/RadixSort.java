@@ -27,17 +27,17 @@ public class RadixSort {
         while(laps > 0) {
             int[] newArr = new int[array.length];
             int[] sortArr = new int[10];
-            for (int j : array) {
-                int val = (j / divisor) % 10;
-                sortArr[val]++;
+            for (int num : array) {
+                int sortIndex = (num / divisor) % 10;
+                sortArr[sortIndex]++;
             }
             for (int i = 0; i < sortArr.length - 1; i++) {
                 sortArr[i + 1] += sortArr[i];
             }
-            for (int i = array.length - 1; i >= 0; i--) {
-                int val = (array[i] / divisor) % 10;
-                sortArr[val]--;
-                newArr[sortArr[val]] = array[i];
+            for (int pos = array.length - 1; pos >= 0; pos--) {
+                int sortIndex = (array[pos] / divisor) % 10;
+                sortArr[sortIndex]--;
+                newArr[sortArr[sortIndex]] = array[pos];
             }
             array = newArr;
             divisor = divisor * 10;
