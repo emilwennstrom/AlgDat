@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 public class PuzzleBoard {
-
+    int counter;
     private static final int numberOfPuzzlePieces = 4;
     private char[][] board;
     private final int size;
@@ -15,6 +15,7 @@ public class PuzzleBoard {
 
 
     public PuzzleBoard(int row, int column) {
+        counter = 0;
         this.size = 5;
         positions = new Stack<>();
         createStartingBoard(row, column);
@@ -26,10 +27,13 @@ public class PuzzleBoard {
         noOfSolutions = 0;
         char firstPiece = '0';
         solveBoard(0, firstPiece);
+        System.out.println("Counter:" + counter);
         return printSolvedBoards();
     }
 
     private void solveBoard(int row, char piece) {
+
+        counter++;
         if (row == size - 1) {
             if (checkBoard()) {
                 addSolvedBoard();
