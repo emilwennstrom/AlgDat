@@ -4,7 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a18bc5a-f8a0-44ac-ae9e-afdbdb434c91" name="Changes" comment="" />
+    <list default="true" id="3a18bc5a-f8a0-44ac-ae9e-afdbdb434c91" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/F12/src/NB35/GreedyKnapsack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/F12/src/NB35/Ware.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/F12/src/NB35/WareCompare.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/F12/src/NB37/EgyptianFraction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Graphs_10/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Graphs_10/src/Prims.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/AlgDat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AlgDat.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graphs_10/out/production/Graphs_10/AbstractGraph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graphs_10/out/production/Graphs_10/Dijkstras.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graphs_10/out/production/Graphs_10/Edge.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graphs_10/out/production/Graphs_10/Graph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graphs_10/out/production/Graphs_10/GraphSearch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graphs_10/out/production/Graphs_10/ListGraph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graphs_10/out/production/Graphs_10/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graphs_10/out/production/Graphs_10/MatrixGraph$Itr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graphs_10/out/production/Graphs_10/MatrixGraph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graphs_10/src/AbstractGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/Graphs_10/src/AbstractGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graphs_10/src/Dijkstras.java" beforeDir="false" afterPath="$PROJECT_DIR$/Graphs_10/src/Dijkstras.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graphs_10/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Graphs_10/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graphs_10/src/MatrixGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/Graphs_10/src/MatrixGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LABA/out/production/LABA/Uppg7/PuzzleBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/LABA/out/production/LABA/Uppg7/PuzzleBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LABA/out/production/LABA/Uppg7/PuzzleMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/LABA/out/production/LABA/Uppg7/PuzzleMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LABA/out/production/LABA/Uppg8/BinarySearchTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/LABA/out/production/LABA/Uppg8/BinarySearchTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LABA/out/production/LABA/Uppg9/RadixSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/LABA/out/production/LABA/Uppg9/RadixSort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LABA/src/Uppg7/PuzzleBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/LABA/src/Uppg7/PuzzleBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LABA/src/Uppg7/PuzzleMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/LABA/src/Uppg7/PuzzleMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LABA/src/Uppg8/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/LABA/src/Uppg8/BinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LABA/src/Uppg9/RadixSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/LABA/src/Uppg9/RadixSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LABA/Uppg7/PuzzleBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LABA/Uppg7/PuzzleBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LABA/Uppg7/PuzzleMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LABA/Uppg7/PuzzleMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LABA/Uppg8/BinarySearchTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LABA/Uppg8/BinarySearchTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LABA/Uppg9/RadixSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LABA/Uppg9/RadixSort.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,19 +55,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/GitHub/AlgDat/LABA&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/GitHub/AlgDat",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "settings.editor.splitter.proportion": "0.27828747",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.PuzzleMain">
     <configuration name="PuzzleMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Uppg7.PuzzleMain" />
@@ -80,10 +116,20 @@
       <workItem from="1676579125466" duration="14000" />
       <workItem from="1676579421755" duration="1022000" />
       <workItem from="1676658114455" duration="112000" />
+      <workItem from="1676876523920" duration="452000" />
+      <workItem from="1676876990147" duration="187000" />
+      <workItem from="1676877191724" duration="25000" />
+      <workItem from="1676894388138" duration="243000" />
+      <workItem from="1676982722577" duration="1102000" />
+      <workItem from="1676983846225" duration="1420000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

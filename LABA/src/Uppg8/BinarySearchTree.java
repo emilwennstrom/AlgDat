@@ -74,15 +74,15 @@ public class BinarySearchTree<E extends Comparable<E>> {
     }
 
 
-    private E getNextLarger(E number, E biggest, Node<E> node){
-        if (node == null) return biggest;
+    private E getNextLarger(E number, E nextBiggest, Node<E> node){
+        if (node == null) return nextBiggest;
         if (number.compareTo(node.data) < 0) {
-            if (biggest == null || biggest.compareTo(node.data) > 0) {
-                biggest = node.data;
-                return getNextLarger(number, biggest, node.left);
+            if (nextBiggest == null || nextBiggest.compareTo(node.data) > 0) {
+                nextBiggest = node.data;
+                return getNextLarger(number, nextBiggest, node.left);
             }
         }
-        return getNextLarger(number, biggest, node.right);
+        return getNextLarger(number, nextBiggest, node.right);
     }
 
 

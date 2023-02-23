@@ -1,8 +1,9 @@
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Iterator;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Edge AB = new Edge(0, 1, 10);
         Edge BA = new Edge(1, 2, 30);
@@ -44,13 +45,30 @@ public class Main {
         int[] pred = new int[matrixGraph.getNumV()];
         double[] dist = new double[matrixGraph.getNumV()];
 
-        Dijkstras.dijkstrasMatrix(matrixGraph, 0, pred, dist);
-
-        System.out.println(Arrays.toString(pred));
-        System.out.println(Arrays.toString(dist));
+        //Dijkstras.dijkstrasMatrix(matrixGraph, 0, pred, dist);
 
 
 
-        System.out.println("Hello world!");
+        matrixGraph.writeMatrixToFile("matrix");
+
+        MatrixGraph m = MatrixGraph.readMatrixFromFile("matrix");
+
+        itr = m.edgeIterator(0);
+        while (itr.hasNext()) {
+            Edge edge = itr.next();
+            if (edge.getWeight() != Double.POSITIVE_INFINITY)
+                System.out.print(edge.getWeight() + " ");
+        }
+        System.out.println();
+
+        System.out.println(m);
+
+        System.out.println(m.dijkstrasTwoPoints(3, 2));
+
+        int[] tree = Prims.primsAlgo(m, 4);
+
+        System.out.println(Arrays.toString(tree));
+
+
     }
 }

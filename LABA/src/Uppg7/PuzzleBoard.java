@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 public class PuzzleBoard {
-    int counter;
+
+    private char[] pieceDesign;
+    public static int totCounter = 0;
     private static final int numberOfPuzzlePieces = 4;
     private char[][] board;
     private final int size;
@@ -12,10 +14,15 @@ public class PuzzleBoard {
     private final Stack<PuzzlePiece[]> positions;
     private int noOfSolutions;
     private final ArrayList<char[][]> solvedBoards;
+    private final int xRow, xCol;
+    private int counter;
 
 
     public PuzzleBoard(int row, int column) {
         counter = 0;
+        this.xRow = row;
+        this.xCol = column;
+        setPieceDesign();
         this.size = 5;
         positions = new Stack<>();
         createStartingBoard(row, column);
@@ -25,14 +32,12 @@ public class PuzzleBoard {
 
     public String solveBoard() {
         noOfSolutions = 0;
-        char firstPiece = '0';
-        solveBoard(0, firstPiece);
-        System.out.println("Counter:" + counter);
+        solveBoard(0);
         return printSolvedBoards();
     }
 
-    private void solveBoard(int row, char piece) {
-
+    private void solveBoard(int row) {
+        totCounter++;
         counter++;
         if (row == size - 1) {
             if (checkBoard()) {
@@ -44,21 +49,35 @@ public class PuzzleBoard {
         if (checkRow(row)){
             positions.push(pieces);
             createPieces(row + 1);
-            movePiecesRight();
-            solveBoard(row + 1, piece);
+            moveToNextPosition();
+            solveBoard(row + 1);
             pieces = positions.pop();
         }
 
         for (int i = 0; i < numberOfPuzzlePieces; i++){
+            if (spotIsBlock(pieces[i])) {
+                moveToNextPosition();
+            }
             if (checkPiece(pieces[i])) {
-                setPiece(pieces[i], piece);
+                setPiece(pieces[i], pieceDesign[i]);
+                //System.out.println(this);
                 positions.push(copyPieces());
-                movePiecesRight();
-                solveBoard(row, (char) (piece + 1));
+                moveToNextPosition();
+                solveBoard(row);
                 pieces = positions.pop();
                 unSetPiece(pieces[i]);
             }
         }
+    }
+
+    private boolean spotIsBlock(PuzzlePiece piece){
+        int row = piece.getAnchor().getRow();
+        int col = piece.getAnchor().getCol();
+        if (row >= size || col >= size) {
+            return false;
+        }
+        return board[row][col] == 'X';
+
     }
 
     private boolean checkRow(int row) {
@@ -67,8 +86,7 @@ public class PuzzleBoard {
         }
         return true;
     }
-
-    private void movePiecesRight() {
+    private void moveToNextPosition() {
        for (int i = 0; i < numberOfPuzzlePieces; i++) {
            int maxCol = pieces[i].getMaxCol();
            int anchRow = pieces[i].getAnchor().getRow();
@@ -108,9 +126,11 @@ public class PuzzleBoard {
     public boolean checkPiece(PuzzlePiece piece) {
         int row1 = piece.getAnchor().getRow();
         int col1 = piece.getAnchor().getCol();
+
         if (row1 >= size || col1 >= size || board[row1][col1] != 'W') {
             return false;
         }
+
         int row2 = piece.getC2().getRow();
         int col2 = piece.getC2().getCol();
         int row3 = piece.getC3().getRow();
@@ -162,11 +182,21 @@ public class PuzzleBoard {
         solvedBoards.add(copy);
     }
 
+    private void setPieceDesign() {
+        pieceDesign = new char[4];
+        pieceDesign[0] = '⌊';
+        pieceDesign[1] = '⌉';
+        pieceDesign[2] = '⌈';
+        pieceDesign[3] = '⌋';
+    }
+
 
     public String printSolvedBoards(){
         StringBuilder sb = new StringBuilder();
+        sb.append("Block at [").append(xRow).append("]").append("[").append(xCol).append("]").append("\n");
+        sb.append("Number of function calls: ").append(counter).append("\n");
         if (solvedBoards.size() == 0) {
-            sb.append("No solutions");
+            sb.append("No solutions").append("\n");
             return sb.toString();
         }
         int no = 1;

@@ -20,27 +20,27 @@ public class RadixSort {
 
 
     public static int[] radixSort(int[] array) {
-        //int mod = 10;
+        final int mod = 10;
         int divisor = 1;
         int laps = numberOfLaps(array);
         double time1 = System.currentTimeMillis();
         while(laps > 0) {
             int[] newArr = new int[array.length];
-            int[] sortArr = new int[10];
+            int[] sortArr = new int[mod];
             for (int num : array) {
-                int sortIndex = (num / divisor) % 10;
+                int sortIndex = (num / divisor) % mod;
                 sortArr[sortIndex]++;
             }
             for (int i = 0; i < sortArr.length - 1; i++) {
                 sortArr[i + 1] += sortArr[i];
             }
             for (int pos = array.length - 1; pos >= 0; pos--) {
-                int sortIndex = (array[pos] / divisor) % 10;
+                int sortIndex = (array[pos] / divisor) % mod;
                 sortArr[sortIndex]--;
                 newArr[sortArr[sortIndex]] = array[pos];
             }
             array = newArr;
-            divisor = divisor * 10;
+            divisor = divisor * mod;
             laps--;
         }
         double time2 = System.currentTimeMillis();
