@@ -1,20 +1,28 @@
 package Uppg5;
 
+import java.util.Arrays;
+import java.util.HashMap;
+
 public class SortingRobotDepth {
 
-    static final private String LongString = "FFF";
+    static final private String LongString = "F";
     static final private int MAXDEPTH = 15;
     private static String shortestSolution;
+    private static HashMap<String, String> hashMap;
+    static int calls = 0;
 
     public static String sortBoxes(String startValues) {
         char[] boxes = new char[]{startValues.charAt(0), startValues.charAt(1), startValues.charAt(2), startValues.charAt(3), startValues.charAt(4)};
+        hashMap = new HashMap<>(100);
         shortestSolution = "";
         if (checkPositions(boxes)) {
             return "Nothing to sort";
         }
         String order = "";
-        //sortBoxes(boxes, order);
-        System.out.println("sortBoxes2: " + sortBoxes2(boxes,0));
+        System.out.println("sortBoxes2: " + sortBoxes2(boxes,0) + " calls " + calls);
+        calls = 0;
+        boxes = new char[]{startValues.charAt(0), startValues.charAt(1), startValues.charAt(2), startValues.charAt(3), startValues.charAt(4)};
+        System.out.println("dynamic: " + sortBoxes2Dynamic(boxes, 0) + " calls " + calls);
         return shortestSolution;
     }
 
@@ -35,12 +43,40 @@ public class SortingRobotDepth {
         moveRightBoxBack(boxes);
     }
 
-    private static String sortBoxes2(char[] boxes, int currentDepth) {
+    private static String sortBoxes2Dynamic(char[] boxes, int currentDepth) {
+        calls++;
+        if (hashMap.containsKey(Arrays.toString(boxes))) {
+            return hashMap.get(Arrays.toString(boxes));
+        }
         if (currentDepth == MAXDEPTH)
             return LongString;
         if (checkPositions(boxes))
             return "";
 
+        switchLeftBoxes(boxes);
+        String b = sortBoxes2Dynamic(boxes, currentDepth + 1) + "b";
+        switchLeftBoxes(boxes);
+        moveRightBoxLeft(boxes);
+        String s = sortBoxes2Dynamic(boxes, currentDepth + 1) + "s";
+        moveRightBoxBack(boxes);
+
+
+        String returnValue;
+        if (s.length() < b.length())
+            returnValue = s;
+        else returnValue = b;
+        if (returnValue.charAt(0) != 'F')
+            hashMap.put(Arrays.toString(boxes), returnValue);
+       return returnValue;
+    }
+
+
+    private static String sortBoxes2(char[] boxes, int currentDepth) {
+        calls++;
+        if (currentDepth == MAXDEPTH)
+            return LongString;
+        if (checkPositions(boxes))
+            return "";
         switchLeftBoxes(boxes);
         String b = sortBoxes2(boxes, currentDepth + 1) + "b";
         switchLeftBoxes(boxes);
@@ -48,7 +84,8 @@ public class SortingRobotDepth {
         moveRightBoxLeft(boxes);
         String s = sortBoxes2(boxes, currentDepth + 1) + "s";
         moveRightBoxBack(boxes);
-        return b.length() < s.length() ? b : s;
+        if (s.length() < b.length()) return s;
+        return b;
     }
 
 
@@ -84,5 +121,7 @@ public class SortingRobotDepth {
         }
         return true;
     }
+
+
 
 }

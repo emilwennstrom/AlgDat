@@ -5,33 +5,23 @@ public class BMain {
     public static void main(String[] args) {
         BinarySearchTree<Integer> binInts = new BinarySearchTree<>();
 
+        int[] nums = new int[] {30, 20, 40, 15, 25, 35, 45, 10,
+        17, 22, 27, 32, 37, 42, 47, 16, 23, 28, 39, 49, 29, 51};
 
+        buildTree(binInts, nums);
 
-        binInts.add(68);
-        binInts.add(24);
-        binInts.add(105);
-        binInts.add(12);
-        binInts.add(65);
-        binInts.add(100);
-        binInts.add(120);
-        binInts.add(6);
-        binInts.add(18);
-        binInts.add(36);
-        binInts.add(66);
-        binInts.add(69);
-        binInts.add(80);
-        binInts.add(110);
-        binInts.add(130);
-
-
-        System.out.println(binInts);
-        binInts.getNextLarger(18);
-
-        for (int i = 0; i < 131; i++) {
-            System.out.println("Next biggest from " + i + " is: " + binInts.getNextLarger(i));
+        for (int i = 0; i < 52; i++) {
+            System.out.println("" + i + ":" + binInts.getNextLarger(i));
         }
 
 
-
     }
+
+    static void buildTree(BinarySearchTree<Integer> b, int[] v) {
+        for (int data : v) {
+            b.add(data);
+        }
+    }
+
+
 }

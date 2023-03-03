@@ -7,6 +7,8 @@ public class TestMyntmaskinen {
     public static void main(String[] args) {
         String answer = null;
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Om 5 kr stoppas in ökar poängen med 4.");
+        System.out.println("Om 10 kr stoppas in multipliceras poängen med 3");
         while (true) {
             System.out.print("Vilken poäng ska uppnås (enter för att avsluta): ");
             answer = scanner.nextLine();

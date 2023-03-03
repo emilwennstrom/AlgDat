@@ -60,7 +60,6 @@ public class PuzzleBoard {
             }
             if (checkPiece(pieces[i])) {
                 setPiece(pieces[i], pieceDesign[i]);
-                //System.out.println(this);
                 positions.push(copyPieces());
                 moveToNextPosition();
                 solveBoard(row);
